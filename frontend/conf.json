@@ -1,5 +1,5 @@
 {
-    "api": "http://API_SERVER:8000/api/v1/",
+    "api": "API_SERVER/api/v1/",
     "eventsUrl": null,
     "eventsMaxMissedHeartbeats": 5,
     "eventsHeartbeatIntervalTime": 60000,

@@ -1,9 +1,10 @@
-FROM python:3.4.3-onbuild
+FROM python:3.4
 MAINTAINER Ivan Pedrazas "ipedrazas@gmail.com"
 
 ENV DEBIAN_FRONTEND noninteractive
 
 ADD taiga-back /taiga
+
 
 COPY docker-settings.py /taiga/settings/local.py
 COPY locale.gen /etc/locale.gen
@@ -25,6 +26,7 @@ ENV API_NAME localhost
 VOLUME ["/taiga/static","/taiga/media"]
 
 WORKDIR /taiga
+RUN date && pip install -r requirements.txt
 
 EXPOSE 8000
 

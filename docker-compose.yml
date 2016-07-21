@@ -1,18 +1,18 @@
-postgres:
-    image: postgres
+version: '2'
+services:
+    postgres:
+        image: postgres
+	volum?
 
-taigaback:
-    image: ipedrazas/taiga-back
-    links:
-        - postgres:postgres
-    ports:
-        - "8000:8000"
+    taigaback:
+        image: ipedrazas/taiga-back
+        links:
+            - postgres:postgres
 
-taigafront:
-    image: ipedrazas/taiga-front
-    links:
-        - taigaback:taiga-back
-    ports:
-        - "80:80"
-    environment:
-        - "API_NAME=boot2docker"
+    taigafront:
+        image: ipedrazas/taiga-front
+        links:
+            - taiga-back:taiga-back
+        environment:
+            - "API_NAME=https://taiga.pisys.eu:8888"
+            - "VIRTUAL_HOST=taiga.pisys.eu"

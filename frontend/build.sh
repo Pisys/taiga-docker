@@ -6,7 +6,7 @@ fi
 
 git clone https://github.com/taigaio/taiga-front-dist
 
-$SUDO docker build -t ipedrazas/taiga-front .
+docker build -t ipedrazas/taiga-front .
 
 if [[ -d  taiga-front-dist ]]; then
     rm -rf taiga-front-dist
